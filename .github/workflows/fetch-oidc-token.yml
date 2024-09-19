@@ -22,5 +22,5 @@ jobs:
 
       - name: Test basic JF CLI Authn and Authz
         run: |
-          curl -XGET -utomj@jfrog.com -p${{ steps.setup-jfrog-cli.outputs.oidc-token}}
+          curl -XGET -utomj@jfrog.com -p${{ steps.setup-jfrog-cli.outputs.oidc-token}} ${{ vars.JF_URL }}/api/build
 
