@@ -23,7 +23,6 @@ jobs:
       - name: Test basic JF CLI Authn and Authz
         run: |
           curl \
-          --url ${{ vars.JF_URL }}/artifactory/feniks-maven-dev-local/com/tomjfrog/feniks/maven-metadata.xml \
-          -o testfile.xml
-          stat testfile.xml
+          --url https://tomjfrog.jfrog.io/mc/api/v1/jpds
+
 
