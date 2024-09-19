@@ -18,6 +18,7 @@ jobs:
           JF_URL: ${{ vars.JF_URL }}
         with:
           oidc-provider-name: github-oidc-integration
+          oidc-audience: jfrog-github
 
       - name: Test basic JF CLI Authn and Authz
         run: |
