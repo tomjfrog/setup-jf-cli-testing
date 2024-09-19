@@ -24,7 +24,6 @@ jobs:
         run: |
           curl \
           --url ${{ vars.JF_URL }}/artifactory/feniks-maven-dev-local/com/tomjfrog/feniks/maven-metadata.xml \
-          -H Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}} \
           -o testfile.xml
           stat testfile.xml
 
