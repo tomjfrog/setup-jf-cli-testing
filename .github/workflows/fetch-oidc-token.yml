@@ -1,4 +1,4 @@
-name: Just the Basics
+name: Working with OIDC
 
 on:
   workflow_dispatch:
@@ -11,15 +11,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-# Uses a specific user's *identity token* as the value for JF_PASSWORD
+      # Uses a specific user's *identity token* as the value for JF_PASSWORD
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
+        id: setup-jfrog-cli
         env:
           JF_URL: ${{ vars.JF_URL }}
-          JF_USER: ${{ secrets.JF_USER }}
-          JF_PASSWORD: ${{ secrets.JF_PASSWORD }}
+        with:
+          oidc-provider-name: github-oidc-integration
 
       - name: Test basic JF CLI Authn and Authz
         run: |
-          jf rt curl -XGET /api/build
+          curl -XGET -utomj@jfrog.com -p${{ steps.setup-jfrog-cli.outputs.oidc-token}}
 
