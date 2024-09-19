@@ -23,6 +23,7 @@ jobs:
       - name: Test basic JF CLI Authn and Authz
         run: |
           curl \
-          --url https://tomjfrog.jfrog.io/mc/api/v1/jpds
+          --url https://tomjfrog.jfrog.io/mc/api/v1/jpds \
+          --header Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}}
 
 
