@@ -2,6 +2,8 @@ name: Working with OIDC
 
 on:
   workflow_dispatch:
+permissions:
+  id-token: write
 
 jobs:
   build:
