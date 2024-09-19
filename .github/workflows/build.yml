@@ -11,6 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+# Uses a specific user's *identity token* as the value for JF_PASSWORD
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
         env:
