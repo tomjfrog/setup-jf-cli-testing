@@ -24,6 +24,6 @@ jobs:
         run: |
           curl \
           --url https://tomjfrog.jfrog.io/mc/api/v1/jpds \
-          --header 'Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}}
+          --header 'Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}}'
 
 
