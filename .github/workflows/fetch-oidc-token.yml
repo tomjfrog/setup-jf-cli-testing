@@ -22,5 +22,6 @@ jobs:
 
       - name: Test basic JF CLI Authn and Authz
         run: |
-          curl ${{ vars.JF_URL }}/artifactory/api/build -H Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}}
+          curl ${{ vars.JF_URL }}/artifactory/feniks-maven-dev-local/com/tomjfrog/feniks/maven-metadata.xml -H Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}} -o testfile.xml
+          stat testfile.xml
 
