@@ -22,5 +22,5 @@ jobs:
 
       - name: Test basic JF CLI Authn and Authz
         run: |
-          "curl ${{ vars.JF_URL }}/artifactory/api/build -H Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}}"
+          curl ${{ vars.JF_URL }}/artifactory/api/build -H Authorization: Bearer ${{ steps.setup-jfrog-cli.outputs.oidc-token}}
 
